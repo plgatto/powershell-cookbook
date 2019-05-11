@@ -3,7 +3,7 @@
 $services = 'SysMain', 'wuauserv', 'AdobeARMservice', 'dbupdate', 'dbupdatem'
 foreach ($service in $services) {
 	Write-Output "Stopping $service..."
-	Get-Service $service | Where {$_.status -eq 'Running'} | Stop-Service #Ottimizzazione avvio
+	Get-Service $service | Where {$_.status -eq 'Running'} | Stop-Service
 	if($?) {
 		Write-Output "$service stopped"
 	}
