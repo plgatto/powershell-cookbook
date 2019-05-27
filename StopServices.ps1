@@ -25,7 +25,7 @@ Write-Output "------------------"
 
 foreach ($process in $processes) {
 	Write-Output "Stopping $service..."
-	if(get-process "outlook" -ea SilentlyContinue) {
+	if(get-process $process -ea SilentlyContinue) {
 		Stop-Process -Name $process -Force
 		Write-Output "$process stopped"
 	} else {
