@@ -24,7 +24,7 @@ Write-Output "Stopping processes"
 Write-Output "------------------"
 
 foreach ($process in $processes) {
-	Write-Output "Stopping $service..."
+	Write-Output "Stopping $process..."
 	if(get-process $process -ea SilentlyContinue) {
 		Stop-Process -Name $process -Force
 		Write-Output "$process stopped"
